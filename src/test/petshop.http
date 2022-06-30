@@ -1,0 +1,144 @@
+### create shop Big pets
+POST http://localhost:8080/api/petshops/shops
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Big pets"
+}
+
+### create shop Little Pets
+POST http://localhost:8080/api/petshops/shops
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Little pets"
+}
+
+### list all shop
+GET http://localhost:8080/api/petshops/shops
+
+### find shop by id
+GET http://localhost:8080/api/petshops/shops/2
+Accept: application/json
+
+### find shop with wrong id
+GET http://localhost:8080/api/petshops/shops/111
+Accept: application/json
+
+### delete shop
+DELETE http://localhost:8080/api/petshops/shops/3
+Accept: application/json
+
+### delete shop with wrong id
+DELETE http://localhost:8080/api/petshops/shops/666
+Accept: application/json
+
+### add new pet boborján
+POST http://localhost:8080/api/petshops/shops/2/pets
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Boborján",
+  "race": "CAT",
+  "price": 100
+}
+
+### add new pet Morzsi
+POST http://localhost:8080/api/petshops/shops/2/pets
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Morzsi",
+  "race": "DOG",
+  "price": 700
+}
+
+### add new pet Füles
+POST http://localhost:8080/api/petshops/shops/1/pets
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Füles",
+  "race": "DOG",
+  "price": 2000
+}
+
+### add new pet Lóri
+POST http://localhost:8080/api/petshops/shops/2/pets
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Lóri",
+  "race": "PARROT",
+  "price": 1500
+}
+### sell pet
+DELETE http://localhost:8080/api/petshops/shops/1/pets/2
+Accept: application/json
+
+### sell pet
+DELETE http://localhost:8080/api/petshops/shops/2/pets/6
+Accept: application/json
+
+### list all pets in a shop
+GET http://localhost:8080/api/petshops/pets
+Accept: application/json
+Content-Type: application/json
+
+### find pet by id
+GET http://localhost:8080/api/petshops/pets/5
+Accept: application/json
+Content-Type: application/json
+
+### modify price of a pet
+PUT http://localhost:8080/api/petshops/pets/1/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "price": 321
+}
+
+### list pets by max price
+GET http://localhost:8080/api/petshops/pets?limit=200
+Accept: application/json
+Content-Type: application/json
+
+### list pets by race
+GET http://localhost:8080/api/petshops/pets?race=DOG
+Accept: application/json
+Content-Type: application/json
+
+### list pets by race and max price
+GET http://localhost:8080/api/petshops/pets?limit=1000&race=DOG
+Accept: application/json
+Content-Type: application/json
+
+### update price with negative
+PUT http://localhost:8080/api/petshops/pets/5/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "price": -321
+}
+
+### create shop with blank name
+POST http://localhost:8080/api/petshops/shops
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": ""
+}
+
+
+### sell wrong pet
+DELETE http://localhost:8080/api/petshops/shops/1/pets/1
+Accept: application/json
